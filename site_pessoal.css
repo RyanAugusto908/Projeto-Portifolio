@@ -1,0 +1,325 @@
+/* Definição das fontes customizadas */
+@font-face {
+    font-family: "Fredericka the Great";
+    src: url(/Font/FrederickatheGreat-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Cabin Sketch_r_r";
+    src: url(/Font/CabinSketch-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Cabin Sketch_r_b";
+    src: url(/Font/CabinSketch-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Yatra One";
+    src: url(/Font/YatraOne-Regular.ttf) format('truetype');
+}
+
+/* Animação do texto no título (recomendo substituir por JS para melhor performance) */
+@keyframes textFrames {
+    0%, 25% { content: "..."; }
+    26%, 50% { content: "Arte "; }
+    51%, 75% { content: "Arte & "; }
+    76%, 100% { content: "Arte & Foco"; }
+}
+
+.titulo::after {
+    content: "";
+    animation: textFrames 0.8s steps(1) infinite;
+    font-family: "Fredericka the Great", serif;
+    font-weight: 100;
+}
+
+/* Variáveis CSS */
+:root {
+    --primary-color: #202020;
+    --secondary-color: #fcc154;
+    --text-color1: white;
+    --text-color2: black;
+    --bg-color: #e9e9e9;
+    --card-bg: #2D1900;
+    --linear-gradient: linear-gradient(to right, #202020, white);
+    --font_1_fredericka: "Fredericka the Great", serif;
+    --font_2_cabin: "Cabin Sketch_r_r", sans-serif;
+    --font_3_yatra: "Yatra One", cursive;
+}
+
+/* Estilos gerais */
+body {
+    font-family: var(--font_2_cabin);
+    margin: 0;
+    background: var(--linear-gradient);
+}
+
+header {
+    background: var(--primary-color);
+    text-align: center;
+    padding: 380px 0;
+}
+
+header h1 {
+    font-family: var(--font_1_fredericka);
+    font-size: 8rem;
+    color: var(--text-color1);
+    margin: 0;
+}
+
+header p {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Navegação */
+nav {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#nav-spacer {
+    height: 0;
+}
+
+/* Links do nav com tamanho adequado para performance */
+nav a {
+    text-decoration: none; /* Corrigido */
+    color: var(--text-color1);
+    background: var(--primary-color);
+    padding: 3px 20px;
+    margin: 0 9px;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    font-size: 85px; /* Ajustado para evitar travamentos */
+}
+
+nav.fixed-nav a {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    background-color: #444;
+}
+
+/* Hero section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color2);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero h2,
+.hero p,
+.btn {
+    font-family: var(--font_3_yatra);
+}
+
+.hero h2 {
+    font-size: 2rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* Botão */
+.btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Carrossel */
+.carrossel {
+    overflow: hidden;
+    position: relative;
+    max-width: 60%;
+    max-height: 600px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.carrossel-conteiner {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    will-change: transform; /* Otimiza animação */
+}
+
+.carrossel-slide {
+    flex: 0 0 calc((100% - 20px) / 3);
+    aspect-ratio: 3 / 4;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.carrossel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carrossel p {
+    font-style: oblique;
+    font-size: 18px;
+    font-family: var(--font_3_yatra);
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 45%; /* centraliza verticalmente no carrossel */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+}
+.carrossel-btn.prev {
+    left: 10px; /* distância da borda esquerda do carrossel */
+}
+.carrossel-btn.next {
+    right: 10px; /* distância da borda direita do carrossel */
+}
+
+.carrossel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Cursos */
+.cursos {
+    background-color: var(--linear-gradient);
+}
+.cursos p{
+    padding: 10px;
+}
+
+.cursos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.curso-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.curso-card {
+    background-color: #fafafa;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.curso-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Depoimentos */
+.depoimentos {
+    background-color: #eee;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.depoimentos h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.depoimentos blockquote {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color1);
+    text-align: center;
+    padding: 20px;
+}
+
+footer nav a {
+    color: var(--secondary-color);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carrossel {
+        max-width: 90vw;
+        max-height: none;
+    }
+
+    .carrossel-slide {
+        flex: 0 0 100%;
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 4rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 5px 10px;
+        margin: 0 5px;
+    }
+
+    .curso-container {
+        gap: 15px;
+    }
+
+    .curso-card {
+        width: 100%;
+        max-width: 320px;
+    }
+    .carrossel-btn {
+        padding: 8px;
+        font-size: 18px;
+    }
+}
