@@ -13,6 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredericka+the+Great&display=swap"
         rel="stylesheet" />
+
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="desenho_tradicional.css">
 </head>
@@ -20,23 +21,106 @@
 <body>
     <header>
         <h1 class="titulo"></h1>
-        <p><a href="index.html">Arte&Foco</p></a>
+        <p>
+            <a href="index.html">Arte&Foco
+            <a href="index.html">Início</a>
+            <a href="desenho_tradicional.html">Cursos</a>
+            <a href="comunidade">Comunidade</a>
+            <a href="sobre">Sobre</a>
+            <a href="contato">Contato</a>
+        </p>
+        
     </header>
+
     <nav></nav>
+
     <main>
-        <section class="texto_principal">
-            <h2>FUNDAMENTOS DO DESENHO:<br>TRAJETORIA INICIAL</h2><br>
-            <div class="imagem_central">
-                <img src="curso_desnh_trad.jpg" alt="Desenho Tradicional">
-            </div>
-            <h3>O que são os fundamentos do desenho?</h3>
-            <p>Os fundamentos do desenho são um conjunto de conceitos e técnicas essenciais que servem como base para qualquer tipo de arte visual. Eles permitem que artista represente a realidade ou crie obras a partir da imaginação de forma precisa e coerente, construindo a estrutura necessária para desenhos equilibrados e realistas.</p>
-            
-        </section>
+        <!-- Conteúdo principal (direita) -->
+        <div class="conteudo-principal">
+            <section id="introducao" class="texto_principal">
+                <h2>FUNDAMENTOS DO DESENHO:<br>TRAJETÓRIA INICIAL</h2>
+                <div class="imagem_central">
+                    <img src="curso_desnh_trad.jpg" alt="Desenho Tradicional">
+                </div>
+            </section>
 
+            <!-- Sidebar com sumário (esquerda, fixa) -->
+            <aside class="sumario">
+                <h3>Sumário</h3>
+                <ul>
+                    <li><a href="#introducao">Introdução</a></li>
+                    <li><a href="#fundamentos">Fundamentos do Desenho</a></li>
+                    <li><a href="#trajetoria">Trajetória Inicial</a></li>
+                    <li><a href="#tecnicas">Técnicas Básicas</a></li>
+                    <li><a href="#conclusao">Conclusão</a></li>
+                </ul>
+            </aside>
 
+            <section id="fundamentos" class="texto_principal">
+                <h3>O que são os fundamentos do desenho?</h3>
+                <p>Os fundamentos do desenho são um conjunto de conceitos e técnicas essenciais que servem como base
+                    para qualquer tipo de arte visual. Eles permitem que o artista represente a realidade ou crie obras
+                    a partir da imaginação de forma precisa e coerente, construindo a estrutura necessária para desenhos
+                    equilibrados e realistas.</p>
+                <!-- Adicione mais conteúdo aqui para simular scroll -->
+                <p>Exemplo de conteúdo adicional: Os princípios incluem proporção, perspectiva, sombreamento e
+                    composição...</p>
+            </section>
+
+            <section id="trajetoria" class="texto_principal">
+                <h3>Trajetória Inicial</h3>
+                <p>Adicionar mais detalhes sobre o caminho inicial no desenho tradicional. Inclua
+                    exemplos, dicas e imagens.</p>
+                <div class="carrossel">
+                    <img src="treino_desenho_1_r.jpg" alt="Passo 1">
+                    <img src="treino_desenho_2_r.jpg" alt="Passo 2">
+                    <img src="treino_desenho_3_r.jpg" alt="Passo 3">
+                </div>
+            </section>
+
+            <section id="tecnicas" class="texto_principal">
+                <h3>Técnicas Básicas</h3>
+                <p>Descreva técnicas como linhas, formas e texturas. Adicione mais parágrafos para o scroll funcionar
+                    bem.</p>
+            </section>
+
+            <section id="conclusao" class="texto_principal">
+                <h3>Conclusão</h3>
+                <p>Resuma os pontos principais e incentive o leitor a praticar.</p>
+            </section>
+        </div>
     </main>
+
     <footer></footer>
+
+    <!-- JavaScript para destaque do sumário (adicione no final do body) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".conteudo-principal section[id]");
+            const links = document.querySelectorAll(".sumario a");
+
+            function activateLink() {
+                let scrollY = window.pageYOffset;
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop - 150; // Ativa antes do topo da seção
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute("id");
+
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        links.forEach((link) => {
+                            link.classList.remove("active");
+                            if (link.getAttribute("href") === "#" + sectionId) {
+                                link.classList.add("active");
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", activateLink);
+            activateLink(); // Ativa no carregamento inicial
+        });
+    </script>
 </body>
 
 </html>

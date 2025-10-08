@@ -72,10 +72,11 @@ header {
     text-align: center;
     color: var(--text-color1);
     background-color: var(--primary-color);
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 20px;
     font-family: var(--font_2_cabin);
     font-weight: lighter;
+    font-size: 25px;
 }
 
 header p,
@@ -83,41 +84,159 @@ header a {
     text-align: center;
     text-decoration: underline;
     color: var(--text-color1);
-    margin-top: 15px;
+    margin-top: 90px;
     font-size: 25px;
 }
 
-.imagem_central {
-    margin: 20px;
+main {
+    display: flex;
+    max-width: 1200px;          /* Largura máxima para centralizar */
+    margin: 0 auto;             /* Centraliza na página */
+    gap: 40px;                  /* Espaço entre sidebar e conteúdo */
+    padding: 20px;              /* Espaçamento interno */
+}
+
+/* Sidebar (sumário) - Esquerda, fixa */
+.sumario {
+    top: 100px;                                       /* Distância do topo da viewport */
+    align-self: flex-start;                           /* Alinha no topo da sidebar */
+    width: 250px;                                     /* Largura fixa da sidebar */
+    padding: 20px;
+    background-color: var(--primary-color);           /* Usa sua variável */
+    color: var(--text-color1);
+    height: fit-content;                              /* Altura automática */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);      /* Sombra sutil como no site ref. */
+    font-family: var(--font_2_cabin);
+    font-size: 16px;
+}
+
+.sumario h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+    font-weight: 400;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 1px;
+}
+
+.sumario ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+}
+
+.sumario li {
+    margin-bottom: 1px;
+}
+
+.sumario a {
+    color: var(--text-color1);
+    text-decoration: none;
+    display: block;
+    padding: 6px 0;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    /* Para o destaque */
+}
+
+.sumario a:hover {
+    color: var(--secondary-color);
+    padding-left: 20px;
+}
+
+/* Conteúdo principal - Direita */
+.conteudo-principal {
+    flex: 1;                /* Ocupa o espaço restante */
+    max-width: 800px;       /* Limita largura para legibilidade */
+    margin-top: 10px;
+}
+.conteudo-principal h2{
     text-align: center;
-    font-weight: lighter;
 }
 
 .texto_principal {
-    margin-top: 40px;
-    font-size: 30px;
-    text-align: center;
-    font-weight: lighter;
-    font-family: var(--font_2_cabin);
-}
-
-.texto_principal h2 {
-    font-family: var(--font_2_cabin);
-    font-weight: 400;
-    white-space: pre-line;
+    margin-bottom: 1;
+    /* Espaço entre seções */
 }
 
 .texto_principal h3 {
     font-family: var(--font_2_cabin);
     font-weight: 600;
-    margin-top: 40px;
-    margin-bottom: 0;
+    font-size:35px;
+    color: var(--primary-color);
+    margin-top: 30px;
+}
+
+.texto_principal h2 {
+    font-size: 2.5em;       /* Maior para destaque */
+    margin-bottom: 10px;
+    line-height: 1.2;       /* Evita <br>, mas mantém quebra se necessário */
 }
 
 .texto_principal p {
-    max-width: 800px;
-    margin: 20px auto 0 auto;
+    text-align: justify;
+    margin-top: 10px;
+    font-size: 18px;        /* Ajustado para legibilidade */
+    line-height: 1.6;
+    max-width: 100%;        /* Remove margens fixas antigas para responsividade */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagem_central {
     text-align: left;
-    font-size: 25px;
-    font-family: var(--font_2_cabin);
+    margin: 20px 0;
+}
+
+.imagem_central img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ====== Carrossel ====== */
+
+.carrossel {
+    display: flex;              /* Mantém flexbox para lado a lado */
+    flex-wrap: nowrap;          /* Impede quebra de linha em desktop (muda para wrap no mobile) */
+    justify-content: center;    /* Centraliza as imagens */
+    align-items: center;        /* Alinha verticalmente no centro */
+    gap: 20px;                  /* Espaço entre imagens */
+    margin: 20px 0;             /* Espaçamento acima/abaixo do carrossel */
+    padding: 10px 0;            /* Espaçamento interno opcional */
+}
+.carrossel img {
+    flex-shrink: 0;             /* Impede que as imagens encolham */
+    width: 255px;               /* Largura fixa (ajuste conforme necessário: 150px para menor, 300px para maior) */
+    height: 500px;              /* Altura fixa (ou use auto para manter proporção) */
+    object-fit: cover;          /* Cobre a área sem distorcer (crop se necessário) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil nas imagens */
+    transition: transform 0.3s ease; /* Animação suave no hover */
+}
+.carrossel img:hover {
+    transform: scale(1.05);     /* Aumenta ligeiramente no hover para interatividade */
+}
+
+
+/* Responsividade: No mobile, permite quebra de linha e imagens menores */
+@media (max-width: 768px) {
+    .carrossel {
+        flex-wrap: wrap;        /* Permite quebra de linha no mobile */
+        gap: 10px;              /* Espaço menor */
+        justify-content: center;
+    }
+    .carrossel img {
+        width: 150px;           /* Imagens menores no mobile */
+        height: 120px;
+    }
+}
+/* Para telas muito pequenas (ex: celular em portrait) */
+@media (max-width: 480px) {
+    .carrossel {
+        flex-direction: column; /* Empilha verticalmente se a tela for muito estreita */
+        align-items: center;
+    }
+    .carrossel img {
+        width: 100%;            /* Largura total no mobile vertical */
+        max-width: 250px;
+    }
 }
