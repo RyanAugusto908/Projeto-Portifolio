@@ -52,7 +52,7 @@
 body {
     font-family: var(--font_2_cabin);
     margin: 0;
-    background: var(--linear-gradient);
+    background: var(--bg-color);
 }
 
 header {
@@ -124,7 +124,6 @@ nav a:hover {
     background-position: center;
     color: var(--text-color2);
     text-align: center;
-    padding: 100px 20px;
 }
 
 .hero h1 {
@@ -163,14 +162,16 @@ nav a:hover {
     overflow: hidden;
     position: relative;
     max-width: 60%;
-    max-height: 600px;
+    max-height: 700px;
     margin: auto;
     border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color1);
 }
 
 .carrossel-conteiner {
     display: flex;
-    gap: 20px;
+    gap: 18px;
     transition: transform 0.5s ease;
     will-change: transform; /* Otimiza animação */
 }
@@ -180,13 +181,16 @@ nav a:hover {
     aspect-ratio: 3 / 4;
     box-sizing: border-box;
     border-radius: 10px;
+    
 }
 
 .carrossel-slide img {
-    width: 100%;
+    width: 325px;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 .carrossel p {
@@ -198,15 +202,12 @@ nav a:hover {
 .carrossel-btn {
     position: absolute;
     top: 45%; /* centraliza verticalmente no carrossel */
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 24px;
+    border: none;  
+    font-size: 20px;
     cursor: pointer;
-    z-index: 2;
-    border-radius: 50%;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #e9e9e9;
 }
 .carrossel-btn.prev {
     left: 10px; /* distância da borda esquerda do carrossel */
@@ -216,21 +217,24 @@ nav a:hover {
 }
 
 .carrossel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    color: black;
 }
 
 /* Cursos */
-.cursos {
-    background-color: var(--linear-gradient);
-}
 .cursos p{
     padding: 10px;
+    color: var(--text-color1);
 }
 
 .cursos h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 15px;
+    color: var(--text-color2);
+}
+
+.cursos h3{
+    color: var(--text-color1);
 }
 
 .curso-container {
@@ -241,7 +245,7 @@ nav a:hover {
 }
 
 .curso-card {
-    background-color: #fafafa;
+    background-color: #292929;
     border-radius: 10px;
     width: 320px;
     text-align: center;
@@ -249,26 +253,22 @@ nav a:hover {
 }
 
 .curso-card img {
-    width: 100%;
+    width: 300px;
     height: 350px;
     object-fit: cover;
     border-radius: 10px;
+    padding: 10px;
 }
 
 /* Depoimentos */
 .depoimentos {
-    background-color: #eee;
-    padding: 50px 20px;
+    padding: 20px 20px;
     text-align: center;
+    height: 50px;
+    margin: 10px;
 }
-
-.depoimentos h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
 .depoimentos blockquote {
-    font-size: 1.25rem;
+    font-size: 15px;
     font-style: italic;
     margin: 0 auto;
     max-width: 600px;
@@ -279,13 +279,20 @@ footer {
     background-color: var(--primary-color);
     color: var(--text-color1);
     text-align: center;
-    padding: 20px;
+    margin: 0;
+    height: 20px;
 }
 
 footer nav a {
     color: var(--secondary-color);
-    margin: 0 10px;
+    margin: 0 5px;
     text-decoration: none;
+    height: 20px;
+    font-size: 20px;
+}
+footer p{
+    height: 10px;
+    align-items: center;
 }
 
 /* Responsividade */

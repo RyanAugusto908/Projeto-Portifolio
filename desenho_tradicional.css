@@ -207,10 +207,14 @@ main {
 }
 
 .coluna_direita {
-    flex: 0 0 30%; /* Coluna direita ocupa 30% */
+    flex: 0 0 30%;
     max-width: 30%;
     font-weight: lighter;
     text-align: center;
+    position: sticky;
+    top: 20px;
+    width: 250px;
+    align-self: flex-start; /* Garante o alinhamento no topo */
 }
 #foto_sobre{
     border-radius: 50%;
@@ -245,7 +249,7 @@ main {
     flex-shrink: 0;             /* Impede que as imagens encolham */
     width: 100%x;               /* Largura fixa (ajuste conforme necessário: 150px para menor, 300px para maior) */
     max-width: 255px;
-    height: auto;              /* Altura fixa (ou use auto para manter proporção) */
+    height: 400px;              /* Altura fixa (ou use auto para manter proporção) */
     aspect-ratio: 1/1;
     object-fit: cover;          /* Cobre a área sem distorcer (crop se necessário) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil nas imagens */
