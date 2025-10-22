@@ -1,22 +1,22 @@
 /* Definição das fontes customizadas */
 @font-face {
     font-family: "Fredericka the Great";
-    src: url(/Font/FrederickatheGreat-Regular.ttf) format('truetype');
+    src: url(/FrederickatheGreat-Regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: "Cabin Sketch_r_r";
-    src: url(/Font/CabinSketch-Regular.ttf) format("truetype");
+    src: url(/CabinSketch-Regular.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Cabin Sketch_r_b";
-    src: url(/Font/CabinSketch-Bold.ttf) format("truetype");
+    src: url(/CabinSketch-Bold.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Yatra One";
-    src: url(/Font/YatraOne-Regular.ttf) format('truetype');
+    src: url(/YatraOne-Regular.ttf) format('truetype');
 }
 
 /* Animação do texto no título (substituir por JS para melhor performance) */
@@ -82,10 +82,11 @@ header {
 header p,
 header a {
     text-align: center;
-    text-decoration: underline;
-    color: var(--text-color1);
+    text-decoration: none;
+    color: var(--secondary-color);
     margin-top: 90px;
     font-size: 25px;
+    font-family: var(--font_1_fredericka);
 }
 
 main {
@@ -100,13 +101,14 @@ main {
 .sumario {
     top: 100px;                                       /* Distância do topo da viewport */
     align-self: flex-start;                           /* Alinha no topo da sidebar */
-    width: 250px;                                     /* Largura fixa da sidebar */
+    width: 250px;
+    max-width: 100%;                                    /* Largura fixa da sidebar */
     padding: 20px;
     background-color: var(--primary-color);           /* Usa sua variável */
     color: var(--text-color1);
     height: fit-content;                              /* Altura automática */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);      /* Sombra sutil como no site ref. */
-    font-family: var(--font_2_cabin);
+    font-family: var(--font_3_yatra);
     font-size: 16px;
 }
 
@@ -143,12 +145,16 @@ main {
     padding-left: 20px;
 }
 
-/* Conteúdo principal - Direita */
+/* ======== Conteúdo principal ========= */
+
 .conteudo-principal {
-    flex: 1;                /* Ocupa o espaço restante */
-    max-width: 800px;       /* Limita largura para legibilidade */
-    margin-top: 10px;
+    display: flex; /* Cria um layout flexível */
+    gap: 40px;     /* Espaço entre as colunas */
+    padding: 20px;
+    flex-wrap: nowrap;  /* Garante que as colunas não quebrem linha */
+    justify-content: space-between; /* Espaça as colunas de forma que fiquem uma ao lado da outra */
 }
+
 .conteudo-principal h2{
     text-align: center;
 }
@@ -159,7 +165,7 @@ main {
 }
 
 .texto_principal h3 {
-    font-family: var(--font_2_cabin);
+    font-family: var(--font_3_yatra);
     font-weight: 600;
     font-size:35px;
     color: var(--primary-color);
@@ -193,6 +199,37 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
+/* ========== Colunas ========== */
+
+.coluna_esquerda {
+    flex: 0 0 70%; /* Coluna esquerda ocupa 70% */
+    max-width: 70%;
+}
+
+.coluna_direita {
+    flex: 0 0 30%; /* Coluna direita ocupa 30% */
+    max-width: 30%;
+    font-weight: lighter;
+    text-align: center;
+}
+#foto_sobre{
+    border-radius: 50%;
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+.coluna_direita img {
+    width: 100%;
+    max-width: 50px;
+}
+
+.coluna_direita p{
+    margin: 10px;
+}
+
 /* ====== Carrossel ====== */
 
 .carrossel {
@@ -206,8 +243,10 @@ main {
 }
 .carrossel img {
     flex-shrink: 0;             /* Impede que as imagens encolham */
-    width: 255px;               /* Largura fixa (ajuste conforme necessário: 150px para menor, 300px para maior) */
-    height: 500px;              /* Altura fixa (ou use auto para manter proporção) */
+    width: 100%x;               /* Largura fixa (ajuste conforme necessário: 150px para menor, 300px para maior) */
+    max-width: 255px;
+    height: auto;              /* Altura fixa (ou use auto para manter proporção) */
+    aspect-ratio: 1/1;
     object-fit: cover;          /* Cobre a área sem distorcer (crop se necessário) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil nas imagens */
     transition: transform 0.3s ease; /* Animação suave no hover */
@@ -216,17 +255,22 @@ main {
     transform: scale(1.05);     /* Aumenta ligeiramente no hover para interatividade */
 }
 
+/* ======= Responsividade ========= */
 
-/* Responsividade: No mobile, permite quebra de linha e imagens menores */
 @media (max-width: 768px) {
     .carrossel {
         flex-wrap: wrap;        /* Permite quebra de linha no mobile */
         gap: 10px;              /* Espaço menor */
         justify-content: center;
+        flex-direction: column;
     }
     .carrossel img {
-        width: 150px;           /* Imagens menores no mobile */
-        height: 120px;
+        width: 100%;           /* Imagens menores no mobile */
+        height: auto;
+    }
+    .coluna_esquerda, .coluna_direita {
+        flex: 1 1 100%; /* Cada coluna ocupa 100% da largura */
+        max-width: 100%;
     }
 }
 /* Para telas muito pequenas (ex: celular em portrait) */
@@ -238,5 +282,6 @@ main {
     .carrossel img {
         width: 100%;            /* Largura total no mobile vertical */
         max-width: 250px;
+        height: auto;
     }
 }
