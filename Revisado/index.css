@@ -1,0 +1,107 @@
+/* Definição das fontes customizadas */
+@font-face {
+    font-family: "Fredericka the Great";
+    src: url(/FrederickatheGreat-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Cabin Sketch_r_r";
+    src: url(/CabinSketch-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Cabin Sketch_r_b";
+    src: url(/CabinSketch-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Yatra One";
+    src: url(/YatraOne-Regular.ttf) format('truetype');
+}
+
+/* Animação do texto no título (recomendo substituir por JS para melhor performance) */
+@keyframes textFrames {
+    0%, 25% { content: "..."; }
+    26%, 50% { content: "Arte "; }
+    51%, 75% { content: "Arte & "; }
+    76%, 100% { content: "Arte & Foco"; }
+}
+#titulo::after {
+    content: "";
+    animation: textFrames 0.8s steps(1) infinite;
+    font-family: var(--font_1_fredericka);
+
+}
+:root {
+    --primary-color: #202020;
+    --secondary-color: #fcc154;
+    --text-color1: white;
+    --text-color2: black;
+    --bg-color: #e9e9e9;
+    --card-bg: #2D1900;
+    --font_1_fredericka: "Fredericka the Great", serif;
+    --font_2_cabin: "Cabin Sketch_r_r", sans-serif;
+    --font_3_yatra: "Yatra One",serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    background-color: var(--primary-color);
+    height: 1080px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#header_titulo h1,p{
+    color: var(--text-color1);
+    font-size: 150px;
+    font-weight: lighter;
+}
+a{
+    cursor: pointer;
+}
+.carrossel {
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slides img {
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: rgba(0,0,0,0.75);
+}
+.esquerda { left: 10px; }
+.direita { right: 10px; }
+
