@@ -21,17 +21,35 @@
 
 /* Animação do texto no título (recomendo substituir por JS para melhor performance) */
 @keyframes textFrames {
-    0%, 25% { content: "..."; }
-    26%, 50% { content: "Arte "; }
-    51%, 75% { content: "Arte & "; }
-    76%, 100% { content: "Arte & Foco"; }
+
+    0%,
+    25% {
+        content: "...";
+    }
+
+    26%,
+    50% {
+        content: "Arte ";
+    }
+
+    51%,
+    75% {
+        content: "Arte & ";
+    }
+
+    76%,
+    100% {
+        content: "Arte & Foco";
+    }
 }
+
 #titulo::after {
     content: "";
     animation: textFrames 0.8s steps(1) infinite;
     font-family: var(--font_1_fredericka);
 
 }
+
 :root {
     --primary-color: #202020;
     --secondary-color: #fcc154;
@@ -41,67 +59,115 @@
     --card-bg: #2D1900;
     --font_1_fredericka: "Fredericka the Great", serif;
     --font_2_cabin: "Cabin Sketch_r_r", sans-serif;
-    --font_3_yatra: "Yatra One",serif;
+    --font_3_yatra: "Yatra One", serif;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-header{
+
+.header_titulo {
     background-color: var(--primary-color);
-    height: 1080px;
+    color: white;
+    font-family: var(--font_2_cabin);
+    font-weight: lighter;
+    font-size: 100px;
+    height: 990px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#header_titulo h1,p{
-    color: var(--text-color1);
-    font-size: 150px;
-    font-weight: lighter;
-}
-a{
-    cursor: pointer;
-}
-.carrossel {
-  max-width: 400px;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.25);
-}
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-.slides img {
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
-}
-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: none;
-  background: black;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-button:hover {
-  background-color: rgba(0,0,0,0.75);
-}
-.esquerda { left: 10px; }
-.direita { right: 10px; }
 
+.header_nav {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav_fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#nav-suave {
+    height: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color1);
+    background: var(--primary-color);
+    padding: 10px;
+    margin: 0 9px;
+    border-radius: 5px;
+    font-weight: lighter;
+    transition: all 0.3s ease;
+    font-size: 50px;
+}
+nav a:hover {
+    background-color: #444;
+}
+nav .nav_fixo a {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+.conteudo_principal {
+    color: var(--text-color2);
+    margin: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.carrossel {
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background: black;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.esquerda {
+    left: 10px;
+}
+
+.direita {
+    right: 10px;
+}
