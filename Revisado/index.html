@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>| Arte&Foco |</title>
-
     <!-- Css externo -->
     <link rel="stylesheet" href="index.css">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
 
 </head>
 
@@ -27,30 +32,85 @@
 
     <main>
         <section class="conteudo_principal">
-            <div id="conteudo_titulo">Encontre sua próxima referência</div>
-            <div class="carrossel">
-                <div class="slides">
-                    <img src="./Img/referencia_1_r.jpg" alt="carrossel_imagem_1" loading="lazy">
-                    <img src="./Img/referencia_2_r.jpg" alt="carrossel_imagem_2" loading="lazy">
-                    <img src="./Img/referencia_3_r.jpg" alt="carrossel_imagem_3" loading="lazy">
-                    <img src="./Img/referencia_4_r.jpg" alt="carrossel_imagem_4" loading="lazy">
-                    <img src="./Img/referencia_5_r.jpg" alt="carrossel_imagem_5" loading="lazy">
-                    <img src="./Img/referencia_6_r.jpg" alt="carrossel_imagem_6" loading="lazy">
-                    <img src="./Img/referencia_7_r.jpg" alt="carrossel_imagem_7" loading="lazy">
-                    <img src="./Img/referencia_8_r.jpg" alt="carrossel_imagem_8" loading="lazy">
-                    <img src="./Img/referencia_9_r.jpg" alt="carrossel_imagem_9" loading="lazy">
-                    <img src="./Img/referencia_10_r.jpg" alt="carrossel_imagem_10" loading="lazy">
-                    <img src="./Img/referencia_11_r.jpg" alt="carrossel_imagem_11" loading="lazy">
-                    <img src="./Img/referencia_12_r.jpg" alt="carrossel_imagem_12" loading="lazy">
-                </div>
+            <div id="conteudo_titulo">Encontre sua próxima referência :0</div>
+            <div id="barra_pesquisa">Pesquisar</div>
+        </section>
 
-                <button class="left">&#10094;</button>
-                <button class="right">&#10095;</button>
+        <section class="carrossel" aria-roledescription="carousel" aria-label="Galeria de imagens">
+
+            <!-- Faixa com slides -->
+            <div class="faixa_carrossel">
+                <div class="slide_carrossel" data-indice="0">
+                    <img src="./Img/referencia_1_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="1">
+                    <img src="./Img/referencia_2_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="2">
+                    <img src="./Img/referencia_3_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="3">
+                    <img src="./Img/referencia_4_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="4">
+                    <img src="./Img/referencia_5_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="5">
+                    <img src="./Img/referencia_6_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="6">
+                    <img src="./Img/referencia_7_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="7">
+                    <img src="./Img/referencia_8_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="8">
+                    <img src="./Img/referencia_9_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="9">
+                    <img src="./Img/referencia_10_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="10">
+                    <img src="./Img/referencia_11_r.jpg">
+                </div>
+                <div class="slide_carrossel" data-indice="11">
+                    <img src="./Img/referencia_12_r.jpg">
+                </div>
+            </div>
+
+            <!-- Botões de navegação -->
+            <button class="botao_carrossel anterior" aria-label="Slide anterior">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <button class="botao_carrossel proximo" aria-label="Próximo slide">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <!-- Indicadores inferiores -->
+            <div class="pontos_carrossel" role="tablist" aria-label="Navegar slides"></div>
+        </section>
+
+        <section class="conteudo_cursos">
+            <div class="curso_card">
+                <img src="/img_curso_card_1.jpg" alt="Curso de Desenho">
+                <h3>Desenho Tradicional</h3>
+                <p>Papel, lápis, caneta, etc.<br><br>Aqui é onde você vai aprender os fundamentos mais importantes do
+                    desenho.</p>
+                <a href="desenho_tradicional.html" class="btn">Saiba Mais</a>
+            </div>
+
+            <div class="curso_card">
 
             </div>
-            
-        </section>
-        <section class=" conteudo_cursos">
+
+            </div>
         </section>
         <section class="conteudo_final"></section>
 
