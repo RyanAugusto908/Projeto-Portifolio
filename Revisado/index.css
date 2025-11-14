@@ -236,18 +236,46 @@ nav .nav_fixo a {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.95);
 }
-.conteudo_cursos{
-    background-color: #202020;
-    height: 500px;
+
+.conteudo_cursos {
+    height: 700px;
     width: auto;
-    
-}
-.curso_container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
+    background-color: #202020;
+    padding: 20px;
+}
+.conteudo_card{
+    background-color: aqua;
+    height: 550px;
+    display: flex;
+    color: white;
+    box-shadow: 10px var(--primary-color);
+}
+
+.curso_card {
+    background-color: #f71414;
+    width: 350px;
+    height: 350px;
+    margin: 10px;
+}
+
+.curso_card img {
+    object-fit: cover;
+    width: 350px;
+    height: 350px;
+}
+.curso_card_texto{
+    background-color: #202020;
+    margin: 10px;
+}
+.curso_card a{
+    text-decoration: none;
+    color: white;
+    background-color:var(--secondary-color);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
 }
 
 /* ====== AJUSTE PARA CELULARES ====== */
