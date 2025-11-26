@@ -74,22 +74,23 @@
     font-family: var(--font_2_cabin);
     font-weight: lighter;
     font-size: 100px;
-    height: 990px;
+    height: 940px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header_nav {
+/* Navegação */
+nav {
     background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
-    padding: 5px;
-    transition: all 0.3s ease;
+    padding: 15px;
+    transition: all 0.10s ease;
 }
 
-.nav_fixo {
+.fixed-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -97,42 +98,96 @@
     z-index: 1000;
 }
 
-#nav-suave {
-    height: 0;
-}
-
 nav a {
     text-decoration: none;
     color: var(--text-color1);
     background: var(--primary-color);
-    padding: 10px;
+    padding: 3px 20px;
     margin: 0 9px;
-    border-radius: 5px;
-    font-weight: lighter;
-    transition: all 0.3s ease;
-    font-size: 50px;
+    border-radius: 3px;
+    font-weight: 700;
+    transition: all 0.5s ease;
+    font-size: 85px;
+}
+
+nav.fixed-nav a {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 25px;
 }
 
 nav a:hover {
     background-color: #444;
 }
 
-nav .nav_fixo a {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 1.2rem;
+#nav-spacer {
+    height: 0;
+    transition: height 0.15s ease;
 }
 
-.conteudo_principal {
+body {
+    background-image: url("./Img/bg_main.jpg");
+    background-size: cover;
+    /* cobre toda a área */
+    background-position: center;
+    /* centraliza a imagem */
+    background-repeat: no-repeat;
+    /* não repete */
+}
+
+
+.barra_pesquisa {
+    background-color: var(--primary-color);
+    border-radius: 5px;
     font-family: var(--font_2_cabin);
     color: var(--text-color2);
-    margin: 20px;
-    text-align: center;
+    padding: 10px;
     font-size: 30px;
+    width: 1000px;
+    margin: 10px 453px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pesquisa img {
+    max-width: 25px;
+    max-height: 25px;
+    margin-right: 10px;
+}
+
+.pesquisa {
+    background-color: darkgray;
+    border-radius: 5px;
+    height: 35px;
+    width: 980px;
+    font-size: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    padding: 10px;
+}
+
+.pesquisa input {
+    border: none;
+    outline: none;
+    background-color: darkgray;
+    font-size: 20px;
+    height: 35px;
+    width: 930px;
+}
+
+.pesquisa input:hover {
+    background-color: #e9e9e9;
+    transition: 0.4s;
+}
+
+.pesquisa input:focus {
+    outline: none;
+    border: none;
+}
+
+.pesquisa:hover {
+    background-color: #e9e9e9;
+    transition: 0.4s;
 }
 
 .carrossel {
@@ -140,7 +195,7 @@ nav .nav_fixo a {
     width: 90%;
     max-width: 1000px;
     height: 490px;
-    margin: 40px auto;
+    margin: 20px auto;
     overflow: hidden;
     border-radius: 8px;
     background: var(--primary-color);
@@ -193,7 +248,7 @@ nav .nav_fixo a {
     height: 44px;
     border-radius: 10px;
     border: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 174, 0, 0.466);
     backdrop-filter: blur(2px);
     cursor: pointer;
     display: flex;
@@ -202,7 +257,8 @@ nav .nav_fixo a {
 }
 
 .botao_carrossel:hover {
-    background: rgba(255, 255, 255, 0.18);
+    background: rgb(255, 174, 0);
+    transition: 0.3s;
 }
 
 .anterior {
@@ -242,11 +298,13 @@ nav .nav_fixo a {
     width: auto;
     display: flex;
     justify-content: center;
-    background-color: #202020;
+    background-color: var(--primary-color);
     padding: 20px;
+    margin: 80px 0 0;
 }
-.conteudo_card{
-    background-color: aqua;
+
+.conteudo_card {
+    background-color: var(--secondary-color);
     height: 550px;
     display: flex;
     color: white;
@@ -265,14 +323,16 @@ nav .nav_fixo a {
     width: 350px;
     height: 350px;
 }
-.curso_card_texto{
+
+.curso_card_texto {
     background-color: #202020;
     margin: 10px;
 }
-.curso_card a{
+
+.curso_card a {
     text-decoration: none;
     color: white;
-    background-color:var(--secondary-color);
+    background-color: var(--secondary-color);
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -290,4 +350,10 @@ nav .nav_fixo a {
         width: 38px;
         height: 38px
     }
+}
+
+footer {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

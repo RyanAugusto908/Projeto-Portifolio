@@ -22,7 +22,9 @@
         <section id="titulo"></section>
     </header>
 
-    <nav class="header_nav">
+    <div id="nav-trigger"></div>
+
+    <nav id="main-nav">
         <a href="index.html">Início</a>
         <a href="desenho_tradicional.html">Cursos</a>
         <a href="comunidade">Comunidade</a>
@@ -31,9 +33,15 @@
     </nav>
 
     <main>
-        <section class="conteudo_principal">
-            <div id="conteudo_titulo">Encontre sua próxima referência :0</div>
-            <div id="barra_pesquisa">Pesquisar</div>
+        <section class="barra_pesquisa">
+            <div class="pesquisa">
+                <img src="./Img/search_icon.png" alt="">
+                <form action="https://www.google.com/search" method="GET" target="_blank">
+                    <input type="text" name="q" placeholder="Pesquisar" autocomplete="off" autocorrect="off"
+                        autocapitalize="off" spellcheck="false">
+                    <input type="hidden" name="tbm" value="isch"> <!-- força Google Imagens -->
+                </form>
+            </div>
         </section>
 
         <section class="carrossel" aria-roledescription="carousel" aria-label="Galeria de imagens">
@@ -95,6 +103,7 @@
 
             <!-- Indicadores inferiores -->
             <div class="pontos_carrossel" role="tablist" aria-label="Navegar slides"></div>
+
         </section>
 
         <section class="conteudo_cursos">
@@ -103,31 +112,32 @@
                     <img src="/img_curso_card_1.jpg" alt="Curso de Desenho">
                     <div class="curso_card_texto">
                         <h3>Desenho Tradicional</h3>
-                        <p>Papel, lápis, caneta, etc.<br>Aqui é onde você vai aprender os fundamentos mais importantes do desenho.</p>
+                        <p>Papel, lápis, caneta, etc.<br>Aqui é onde você vai aprender os fundamentos mais importantes
+                            do desenho.</p>
                     </div>
                     <a href="desenho_tradicional.html" class="btn">Saiba Mais</a>
                 </div>
 
-            <div class="conteudo_card">
-                <div class="curso_card">
-                    <img src="/img_curso_card_1.jpg" alt="Curso de Desenho">
-                    <div class="curso_card_texto">
-                        <h3>Desenho Tradicional</h3>
-                        <p>Papel, lápis, caneta, etc.<br>Aqui é onde você vai aprender os fundamentos mais importantes do desenho.</p>
+                <div class="conteudo_card">
+                    <div class="curso_card">
+                        <img src="./Img/img_curso_card_2.jpg" alt="Curso de Pintura" loading="lazy" />
+                        <h3>Escolha das Tintas</h3>
+                        <p>Gouache, óleo, acrílica, aquarela.<br><br>Este curso vai te guiar do básico ao avançado,
+                            desenvolvendo sua sensibilidade artística com cor e textura!</p>
+                        <a href="cursos/desenho" class="btn">Saiba Mais</a>
                     </div>
-                    <a href="desenho_tradicional.html" class="btn">Saiba Mais</a>
-                </div>
 
-            <div class="conteudo_card"> 
-                <div class="curso_card">
-                    <img src="/img_curso_card_1.jpg" alt="Curso de Desenho">
-                    <div class="curso_card_texto">
-                        <h3>Desenho Tradicional</h3>
-                        <p>Papel, lápis, caneta, etc.<br>Aqui é onde você vai aprender os fundamentos mais importantes do desenho.</p>
+                    <div class="conteudo_card">
+                        <div class="curso_card">
+                            <img src="/img_curso_card_1.jpg" alt="Curso de Desenho">
+                            <div class="curso_card_texto">
+                                <h3>Desenho Tradicional</h3>
+                                <p>Papel, lápis, caneta, etc.<br>Aqui é onde você vai aprender os fundamentos mais
+                                    importantes do desenho.</p>
+                            </div>
+                            <a href="desenho_tradicional.html" class="btn">Saiba Mais</a>
+                        </div>
                     </div>
-                    <a href="desenho_tradicional.html" class="btn">Saiba Mais</a>
-                </div>
-            </div>
         </section>
 
         <section class="conteudo_final">
@@ -135,6 +145,13 @@
         </section>
 
     </main>
+
+    <footer>
+        <pre>Grato! By - Ryan Augusto Pestana.
+        </pre>
+        <img src="./Img/gif_cat.gif" alt="">
+        <p>&copy; 2025 Arte&Foco. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 <script src="index.js"></script>

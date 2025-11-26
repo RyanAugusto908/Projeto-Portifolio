@@ -1,3 +1,20 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.getElementById("main-nav");
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (!entry.isIntersecting) {
+                nav.classList.add("fixed-nav");
+            } else {
+                nav.classList.remove("fixed-nav");
+            }
+        },
+        { threshold: 0 }
+    );
+
+    observer.observe(document.getElementById("nav-trigger"));
+});
+
 // ====== SCRIPT DO CARROSSEL RESPONSIVO ======
 (function () {
   const carrossel = document.querySelector('.carrossel');
