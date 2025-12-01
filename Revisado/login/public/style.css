@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #202020;
+    --secondary-color: #fcc154;
+    --text-color1: white;
+    --text-color2: black;
+    --bg-color: #e9e9e9;
+    --card-bg: #2D1900;
+    --font_1_fredericka: "Fredericka the Great", serif;
+    --font_2_cabin: "Cabin Sketch_r_r", sans-serif;
+    --font_3_yatra: "Yatra One", serif;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.form-container, .form-container p{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container a{
+    padding: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    color: black;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+input {
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+button {
+    padding: 12px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background: var(--secondary-color);
+    transition: 0.5s;
+}
+
+a {
+    color: #667eea;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#mensagem {
+    margin-top: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.mensagem-sucesso {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensagem-erro {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+#area-logada {
+    text-align: center;
+}
+
+#dados-usuario {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+    text-align: left;
+}

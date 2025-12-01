@@ -1,18 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.getElementById("main-nav");
+  const nav = document.getElementById("main-nav");
+  const spacer = document.getElementById("nav-spacer");
 
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (!entry.isIntersecting) {
-                nav.classList.add("fixed-nav");
-            } else {
-                nav.classList.remove("fixed-nav");
-            }
-        },
-        { threshold: 0 }
-    );
+  let navTop = nav.offsetTop;
 
-    observer.observe(document.getElementById("nav-trigger"));
+  function fixarNav() {
+    const navAltura = nav.offsetHeight;
+
+    if (window.scrollY >= navTop) {
+      if (!nav.classList.contains("fixed-nav")) {
+        nav.classList.add("fixed-nav");
+
+        // calcula de novo a altura já com padding reduzido
+        requestAnimationFrame(() => {
+          spacer.style.height = nav.offsetHeight + "px";
+        });
+      }
+    } else {
+      nav.classList.remove("fixed-nav");
+      spacer.style.height = "0px";
+    }
+  }
+
+  window.addEventListener("scroll", fixarNav);
+
+  // Recalcula quando a janela muda de tamanho
+  window.addEventListener("resize", () => {
+    navTop = nav.offsetTop;
+    if (nav.classList.contains("fixed-nav")) {
+      spacer.style.height = nav.offsetHeight + "px";
+    }
+  });
+
+  fixarNav();
 });
 
 // ====== SCRIPT DO CARROSSEL RESPONSIVO ======
@@ -144,13 +164,3 @@ document.addEventListener("DOMContentLoaded", () => {
   irPara(0);
   iniciarAuto();
 })();
-
-// ====== ELEMENTO DE STATUS ======
-const status = document.getElementById('status_carrossel');
-if (!status) {
-  const novoStatus = document.createElement('div');
-  novoStatus.id = 'status_carrossel';
-  novoStatus.setAttribute('aria-live', 'polite');
-  novoStatus.hidden = true;
-  document.body.appendChild(novoStatus);
-}

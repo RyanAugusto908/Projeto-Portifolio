@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Login Simples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔐 Sistema de Login</h1>
+       
+        <!-- Formulário de Registro -->
+        <div id="registro-form" class="form-container">
+            <form id="formRegistro">
+                <input type="text" id="nome" placeholder="Nome completo" required>
+                <input type="tel" id="telefone" placeholder="Telefone (11 99999-9999)" required>
+                <input type="text" id="cpf" placeholder="CPF (000.000.000-00)" required>
+                <input type="password" id="senha" placeholder="Senha (mínimo 6 caracteres)" required>
+                <input type="password" id="confirmarSenha" placeholder="Confirmar senha" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <p>Já tem conta? <a href="#" onclick="mostrarLogin()">Fazer Login</a></p>
+        </div>
+
+        <!-- Formulário de Login -->
+        <div id="login-form" class="form-container" style="display: none;">
+            <form id="formLogin">
+                <input type="tel" id="loginTelefone" placeholder="Telefone cadastrado" required>
+                <input type="password" id="loginSenha" placeholder="Sua senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p>Não tem conta? <a href="#" onclick="mostrarRegistro()">Cadastrar</a></p>
+        </div>
+
+        <!-- Área Logada -->
+        <div id="area-logada" class="form-container" style="display: none;">
+            <h2>Bem-vindo!</h2>
+            <div id="dados-usuario"></div>
+            <button onclick="sair()">Sair</button>
+        </div>
+
+        <!-- Mensagens -->
+        <div id="mensagem"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

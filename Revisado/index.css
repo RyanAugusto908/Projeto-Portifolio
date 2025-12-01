@@ -21,33 +21,16 @@
 
 /* Animação do texto no título (recomendo substituir por JS para melhor performance) */
 @keyframes textFrames {
-
-    0%,
-    25% {
-        content: "...";
-    }
-
-    26%,
-    50% {
-        content: "Arte ";
-    }
-
-    51%,
-    75% {
-        content: "Arte & ";
-    }
-
-    76%,
-    100% {
-        content: "Arte & Foco";
-    }
+    0%, 25% { content: "..."; }
+    26%, 50% { content: "Arte "; }
+    51%, 75% { content: "Arte & "; }
+    76%, 100% { content: "Arte & Foco"; }
 }
 
 #titulo::after {
     content: "";
     animation: textFrames 0.8s steps(1) infinite;
     font-family: var(--font_1_fredericka);
-
 }
 
 :root {
@@ -74,7 +57,7 @@
     font-family: var(--font_2_cabin);
     font-weight: lighter;
     font-size: 100px;
-    height: 940px;
+    height: 945px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -83,58 +66,61 @@
 
 /* Navegação */
 nav {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     display: flex;
     justify-content: center;
-    padding: 15px;
-    transition: all 0.10s ease;
+    padding: 20px;
+    border-top: 5px solid white;
+    transition: padding 0.35s ease, font-size 0.35s ease;
 }
 
-.fixed-nav {
+/* links do nav */
+nav a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    padding: 8px 20px;
+    margin: 0 10px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 40px;
+    transition: padding 0.25s ease, font-size 0.25s ease;
+}
+
+/* state fixo */
+nav.fixed-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 999;
+    padding: 10px; /* nav reduz */
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--text-color1);
-    background: var(--primary-color);
-    padding: 3px 20px;
-    margin: 0 9px;
-    border-radius: 3px;
-    font-weight: 700;
-    transition: all 0.5s ease;
-    font-size: 85px;
-}
-
+/* quando fixo, os links diminuem */
 nav.fixed-nav a {
-    padding: 10px 20px;
-    margin: 0 10px;
     font-size: 25px;
+    padding: 5px 15px;
+}
+
+/* spacer que mantém o layout estável */
+#nav-spacer {
+    height: 0;
+    transition: height 0.2s ease;
+    background-color: var(--primary-color);
 }
 
 nav a:hover {
     background-color: #444;
-}
-
-#nav-spacer {
-    height: 0;
-    transition: height 0.15s ease;
+    transition: 0.5s;
 }
 
 body {
     background-image: url("./Img/bg_main.jpg");
-    background-size: cover;
-    /* cobre toda a área */
-    background-position: center;
-    /* centraliza a imagem */
-    background-repeat: no-repeat;
-    /* não repete */
+    background-size: cover; /* cobre toda a área */
+    background-position: center; /* centraliza a imagem */
+    background-repeat: no-repeat; /* não repete */
+    background-attachment: fixed;
 }
-
 
 .barra_pesquisa {
     background-color: var(--primary-color);
@@ -170,7 +156,7 @@ body {
     border: none;
     outline: none;
     background-color: darkgray;
-    font-size: 20px;
+    font-size: 15px;
     height: 35px;
     width: 930px;
 }
@@ -190,12 +176,31 @@ body {
     transition: 0.4s;
 }
 
+.subtitulo {
+    border-bottom: 2.5px solid black;
+    background-color: white;
+    display: flex;
+    height: 50px;
+    width: 1905px;
+    text-align: left;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.subtitulo h2 {
+    text-align: left;
+    margin-left: 440px;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
 .carrossel {
     position: relative;
     width: 90%;
     max-width: 1000px;
     height: 490px;
-    margin: 20px auto;
+    margin: 50px auto;
     overflow: hidden;
     border-radius: 8px;
     background: var(--primary-color);
@@ -228,15 +233,13 @@ body {
 
 @media (max-width: 1024px) {
     .slide_carrossel {
-        min-width: calc(100% / 2);
-        /* tablet */
+        min-width: calc(100% / 2); /* tablet */
     }
 }
 
 @media (max-width: 600px) {
     .slide_carrossel {
-        min-width: 100%;
-        /* celular */
+        min-width: 100%; /* celular */
     }
 }
 
@@ -257,17 +260,12 @@ body {
 }
 
 .botao_carrossel:hover {
-    background: rgb(255, 174, 0);
+    background: var(--secondary-color);
     transition: 0.3s;
 }
 
-.anterior {
-    left: 14px;
-}
-
-.proximo {
-    right: 14px;
-}
+.anterior { left: 14px; }
+.proximo { right: 14px; }
 
 /* ====== INDICADORES (PONTOS INFERIORES) ====== */
 .pontos_carrossel {
@@ -293,12 +291,16 @@ body {
     background: rgba(255, 255, 255, 0.95);
 }
 
+.curso_titulo {
+    height: 100px;
+    background-color: #202020;
+}
+
 .conteudo_cursos {
     height: 700px;
     width: auto;
     display: flex;
     justify-content: center;
-    background-color: var(--primary-color);
     padding: 20px;
     margin: 80px 0 0;
 }
@@ -345,7 +347,6 @@ body {
         right: 12px;
         font-size: 14px
     }
-
     .botao-carrossel {
         width: 38px;
         height: 38px
