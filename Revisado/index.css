@@ -306,7 +306,7 @@ body {
 }
 
 .conteudo_card {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     height: 550px;
     display: flex;
     color: white;
