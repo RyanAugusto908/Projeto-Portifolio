@@ -78,12 +78,13 @@ nav {
 nav a {
     text-decoration: none;
     color: var(--secondary-color);
-    padding: 8px 20px;
-    margin: 0 10px;
+    margin: 0 18px;
     border-radius: 3px;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 30px;
     transition: padding 0.25s ease, font-size 0.25s ease;
+    font-family: var(--font_1_fredericka);
+    font-weight: lighter;
 }
 
 /* state fixo */
@@ -293,7 +294,18 @@ body {
 
 .curso_titulo {
     height: 100px;
+    width: auto;
     background-color: #202020;
+    color: var(--text-color1);
+    font-size: 30px;
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;  /* Centraliza verticalmente */
+}
+
+.curso_titulo h2{
+    padding: 5px;
+    margin: 0;
 }
 
 .conteudo_cursos {
