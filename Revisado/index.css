@@ -314,33 +314,38 @@ body {
     display: flex;
     justify-content: center;
     padding: 20px;
-    margin: 80px 0 0;
+    margin: 10px 0 0;
 }
 
 .conteudo_card {
-    background-color: var(--primary-color);
-    height: 550px;
+    height: 600px;
     display: flex;
     color: white;
-    box-shadow: 10px var(--primary-color);
+    border-radius: 10px;
 }
 
 .curso_card {
-    background-color: #f71414;
-    width: 350px;
-    height: 350px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    width: 370px;
+    height: 600px;
     margin: 10px;
+    gap: 10px;
+    padding: 10px;
 }
 
 .curso_card img {
     object-fit: cover;
     width: 350px;
-    height: 350px;
+    min-height: 350px;
+    border-radius: 5px;
 }
 
 .curso_card_texto {
     background-color: #202020;
-    margin: 10px;
+    min-height: 150px;
 }
 
 .curso_card a {
@@ -348,8 +353,23 @@ body {
     color: white;
     background-color: var(--secondary-color);
     padding: 10px;
-    margin: 10px;
+    width: 100px;
     border-radius: 5px;
+}
+.conteudo_final{
+    background-color: #202020;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.texto_final{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* ====== AJUSTE PARA CELULARES ====== */
