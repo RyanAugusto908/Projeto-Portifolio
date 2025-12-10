@@ -294,7 +294,7 @@ body {
 
 .curso_titulo {
     height: 100px;
-    width: auto;
+    max-width: 200px;
     background-color: #202020;
     color: var(--text-color1);
     font-size: 30px;
@@ -309,53 +309,65 @@ body {
 }
 
 .conteudo_cursos {
-    height: 700px;
+    height: 1250px;
     width: auto;
     display: flex;
-    justify-content: center;
     padding: 20px;
     margin: 10px 0 0;
 }
 
 .conteudo_card {
+    margin-left: 420px;
     height: 600px;
     display: flex;
     color: white;
     border-radius: 10px;
+    flex-direction: column;
 }
 
 .curso_card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: var(--primary-color);
     border-radius: 10px;
-    width: 370px;
     height: 600px;
     margin: 10px;
     gap: 10px;
     padding: 10px;
+    max-width: 1000px;
 }
 
 .curso_card img {
+    width: 350px;          /* menor */
+    height: 350px;         /* quadrada */
     object-fit: cover;
-    width: 350px;
-    min-height: 350px;
     border-radius: 5px;
 }
 
-.curso_card_texto {
-    background-color: #202020;
-    min-height: 150px;
+
+.curso_card_texto { 
+    flex: 1;                   /* ocupa todo o espaço sobrando */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 18px;
 }
 
-.curso_card a {
+.link_card {
+    margin-top: auto;          /* empurra o botão para o fim */
+}
+
+.link_card a {
+    display: inline-block;
     text-decoration: none;
     color: white;
     background-color: var(--secondary-color);
-    padding: 10px;
-    width: 100px;
+    padding: 10px 20px;
     border-radius: 5px;
+    font-weight: bold;
 }
+
 .conteudo_final{
     background-color: #202020;
     margin: 20px;
