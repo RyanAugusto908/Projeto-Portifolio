@@ -35,6 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
   fixarNav();
 });
 
+// =========== ROLAGEM SUAVE ================= //
+document.getElementById('botao-compra').addEventListener('click', function() {
+  document.getElementById('secao-compra').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start' // Alinha o topo da seção com o topo da viewport
+  });
+});
+
 // ====== SCRIPT DO CARROSSEL RESPONSIVO ======
 (function () {
   const carrossel = document.querySelector('.carrossel');

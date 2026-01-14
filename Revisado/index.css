@@ -21,10 +21,26 @@
 
 /* Animação do texto no título (recomendo substituir por JS para melhor performance) */
 @keyframes textFrames {
-    0%, 25% { content: "..."; }
-    26%, 50% { content: "Arte "; }
-    51%, 75% { content: "Arte & "; }
-    76%, 100% { content: "Arte & Foco"; }
+
+    0%,
+    25% {
+        content: "...";
+    }
+
+    26%,
+    50% {
+        content: "Arte ";
+    }
+
+    51%,
+    75% {
+        content: "Arte & ";
+    }
+
+    76%,
+    100% {
+        content: "Arte & Foco";
+    }
 }
 
 #titulo::after {
@@ -94,7 +110,8 @@ nav.fixed-nav {
     left: 0;
     width: 100%;
     z-index: 999;
-    padding: 10px; /* nav reduz */
+    padding: 10px;
+    /* nav reduz */
 }
 
 /* quando fixo, os links diminuem */
@@ -117,10 +134,101 @@ nav a:hover {
 
 body {
     background-image: url("./Img/bg_main.jpg");
-    background-size: cover; /* cobre toda a área */
-    background-position: center; /* centraliza a imagem */
-    background-repeat: no-repeat; /* não repete */
+    background-size: cover;
+    /* cobre toda a área */
+    background-position: center;
+    /* centraliza a imagem */
+    background-repeat: no-repeat;
+    /* não repete */
     background-attachment: fixed;
+    scroll-behavior: smooth;
+}
+.principal_menu_titulo {
+    margin: 5px;
+    height: 600px;
+    width: 1200px;
+    background-color: #444;
+    color: white;
+}
+
+.curso_principal {
+    margin: auto;
+    padding: 5px;
+    height: 750px;
+    width: 100%;
+    background-color: #2D1900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo_curso {
+    margin: auto;
+    height: 200px;
+    width: 600px;
+    display: flex;
+
+}
+.curso_imagem {
+    margin: auto;
+    height: 200px;
+    width: 1200px;
+    display: flex;
+}
+
+.menu_secundario {
+    margin: 5px;
+    height: 150px;
+    width: 1200px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+/* CONTAINER DO BOTÃO */
+.menu_button {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botao-compra {
+    background-color: #fcc154;
+    color: #2D1900;
+    font-size: 22px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* HOVER */
+#botao-compra:hover {
+    background: linear-gradient(135deg, #ffe5a7, #f1b94b);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+    transition: 1s ease;
+}
+
+.menu_bloco {
+    margin: 20px;
+    height: 100px;
+    width: 990px;
+    background-color: #fcc154;
+    text-align: justify;
+}
+
+.bloco_titulo {
+    margin: auto;
+    height: 25px;
+    width: 100%;
+    background-color: blueviolet;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
 }
 
 .barra_pesquisa {
@@ -182,7 +290,7 @@ body {
     background-color: white;
     display: flex;
     height: 50px;
-    width: 1905px;
+    width: 100%;
     text-align: left;
     align-items: center;
     justify-content: flex-start;
@@ -234,13 +342,15 @@ body {
 
 @media (max-width: 1024px) {
     .slide_carrossel {
-        min-width: calc(100% / 2); /* tablet */
+        min-width: calc(100% / 2);
+        /* tablet */
     }
 }
 
 @media (max-width: 600px) {
     .slide_carrossel {
-        min-width: 100%; /* celular */
+        min-width: 100%;
+        /* celular */
     }
 }
 
@@ -265,8 +375,13 @@ body {
     transition: 0.3s;
 }
 
-.anterior { left: 14px; }
-.proximo { right: 14px; }
+.anterior {
+    left: 14px;
+}
+
+.proximo {
+    right: 14px;
+}
 
 /* ====== INDICADORES (PONTOS INFERIORES) ====== */
 .pontos_carrossel {
@@ -292,20 +407,22 @@ body {
     background: rgba(255, 255, 255, 0.95);
 }
 
-.curso_titulo {
-    height: 100px;
-    max-width: 200px;
-    background-color: #202020;
-    color: var(--text-color1);
-    font-size: 30px;
+.curso_titulo_container {
     display: flex;
-    justify-content: center;  /* Centraliza horizontalmente */
-    align-items: center;  /* Centraliza verticalmente */
+    justify-content: center;
+    margin: 40px 0;
 }
 
-.curso_titulo h2{
-    padding: 5px;
-    margin: 0;
+.curso_titulo {
+    height: 100px;
+    width: 900px;
+    color: black;
+    text-decoration: underline;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .conteudo_cursos {
@@ -328,8 +445,10 @@ body {
 .curso_card {
     display: flex;
     flex-direction: row;
-    background-color: var(--primary-color);
+    background-image: linear-gradient(to right, rgba(87, 87, 87, 0.856), rgba(224, 224, 224, 0.295));
+    color: black;
     border-radius: 10px;
+    box-shadow: 0 8px 24px var(--primary-color);
     height: 600px;
     margin: 10px;
     gap: 10px;
@@ -338,24 +457,33 @@ body {
 }
 
 .curso_card img {
-    width: 350px;          /* menor */
-    height: 350px;         /* quadrada */
+    width: 350px;
+    /* menor */
+    height: 350px;
+    /* quadrada */
     object-fit: cover;
     border-radius: 5px;
 }
 
 
-.curso_card_texto { 
-    flex: 1;                   /* ocupa todo o espaço sobrando */
+.curso_card_texto {
+    flex: 1;
+    /* ocupa todo o espaço sobrando */
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     font-size: 18px;
+    color: black;
+}
+
+.curso_card_texto p {
+    color: black;
 }
 
 .link_card {
-    margin-top: auto;          /* empurra o botão para o fim */
+    margin-top: auto;
+    /* empurra o botão para o fim */
 }
 
 .link_card a {
@@ -368,20 +496,25 @@ body {
     font-weight: bold;
 }
 
-.conteudo_final{
-    background-color: #202020;
-    margin: 20px;
-    padding: 10px;
+.conteudo_final {
+    margin: 40px auto;
+    padding: 30px;
     display: flex;
     justify-content: center;
+    /* centraliza horizontal */
     align-items: center;
-    text-align: center;
+    /* centraliza vertical */
 }
-.texto_final{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.texto_final {
+    max-width: 1000px;
+    /* largura controlada */
     text-align: center;
+    /* texto centralizado */
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    text-align: justify;
+
 }
 
 /* ====== AJUSTE PARA CELULARES ====== */
@@ -391,6 +524,7 @@ body {
         right: 12px;
         font-size: 14px
     }
+
     .botao-carrossel {
         width: 38px;
         height: 38px
