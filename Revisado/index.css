@@ -143,18 +143,11 @@ body {
     background-attachment: fixed;
     scroll-behavior: smooth;
 }
-.principal_menu_titulo {
-    margin: 5px;
-    height: 600px;
-    width: 1200px;
-    background-color: #444;
-    color: white;
-}
 
 .curso_principal {
     margin: auto;
     padding: 5px;
-    height: 750px;
+    height: 1000px;
     width: 100%;
     background-color: #2D1900;
     display: flex;
@@ -162,18 +155,58 @@ body {
     align-items: center;
 }
 
-.titulo_curso {
-    margin: auto;
-    height: 200px;
-    width: 600px;
+.principal_menu {
+    background-color: #f1b94b;
+    height: 800px;
+    width: 1255px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.principal_menu img {
+    width: 600px;
+    height: 700px;
+    background-size: cover;
+}
+
+.principal_menu_titulo {
+    margin: 5px;
+    height: 600px;
+    width: 900px;
+    padding: 20px;
+    background-color: #ff0000;
+    color: white;
 
 }
+
+.titulo_curso {
+    margin: auto;
+    font-size: 40px;
+    height: 220px;
+    width: 600px;
+    background-color: aqua;
+    justify-content: right;
+    align-items: start;
+    text-align: start;
+}
+
+.curso_texto {
+    background-color: blue;
+    height: 150px;
+    width: 600px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
 .curso_imagem {
     margin: auto;
-    height: 200px;
+    height: 700px;
     width: 1200px;
     display: flex;
+    background-color: blueviolet;
 }
 
 .menu_secundario {
@@ -182,18 +215,15 @@ body {
     width: 1200px;
     background-color: aqua;
     display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
 }
-
 
 /* CONTAINER DO BOTÃO */
 .menu_button {
     margin: 15px auto;
+    justify-content: start;
+    align-items: start;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #botao-compra {
@@ -204,13 +234,14 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.5s ease;
 }
 
 /* HOVER */
 #botao-compra:hover {
-    background: linear-gradient(135deg, #ffe5a7, #f1b94b);
+    background-color: #202020;
+    color: white;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
-    transition: 1s ease;
 }
 
 .menu_bloco {
