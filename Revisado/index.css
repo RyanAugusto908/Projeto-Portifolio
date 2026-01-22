@@ -271,6 +271,7 @@ body {
     height: 120px;
     width: 990px;
     text-align: justify;
+    background-color: white;
 }
 
 .bloco_titulo {
@@ -284,8 +285,6 @@ body {
 .bloco_texto{
     height: 100px;
     width: 200px;
-    background-color: #202020;
-
 }
 
 .subtitulo {
