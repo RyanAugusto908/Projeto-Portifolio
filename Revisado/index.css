@@ -1,22 +1,22 @@
 /* Definição das fontes customizadas */
 @font-face {
     font-family: "Fredericka the Great";
-    src: url(/FrederickatheGreat-Regular.ttf) format('truetype');
+    src: url(./Font/FrederickatheGreat-Regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: "Cabin Sketch_r_r";
-    src: url(/CabinSketch-Regular.ttf) format("truetype");
+    src: url(./Font/CabinSketch-Regular.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Cabin Sketch_r_b";
-    src: url(/CabinSketch-Bold.ttf) format("truetype");
+    src: url(./Font/CabinSketch-Bold.ttf) format("truetype");
 }
 
 @font-face {
     font-family: "Yatra One";
-    src: url(/YatraOne-Regular.ttf) format('truetype');
+    src: url(./Font/YatraOne-Regular.ttf) format('truetype');
 }
 
 /* Animação do texto no título (recomendo substituir por JS para melhor performance) */
