@@ -293,25 +293,6 @@ body {
     font-size: 20px;
 }
 
-.subtitulo {
-    border-bottom: 2.5px solid var(--text-color2);
-    background-color: var(--bg-color);
-    display: flex;
-    height: 50px;
-    width: 100%;
-    text-align: left;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 20px;
-}
-
-.subtitulo h2 {
-    text-align: left;
-    margin-left: 440px;
-    font-weight: lighter;
-    font-size: 20px;
-}
-
 .barra_pesquisa {
     background-color: var(--primary-color);
     border-radius: 5px;
@@ -319,8 +300,8 @@ body {
     color: var(--text-color2);
     padding: 10px;
     font-size: 30px;
-    width: 1000px;
-    margin: 10px 453px;
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -487,15 +468,12 @@ body {
 }
 
 .conteudo_cursos {
-    height: 1250px;
-    width: auto;
+    height: 1200px;
     display: flex;
-    padding: 20px;
-    margin: 10px 0 0;
+    justify-content: center;
 }
 
 .conteudo_card {
-    margin-left: 420px;
     height: 600px;
     display: flex;
     color: var(--text-color1);
